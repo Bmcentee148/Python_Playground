@@ -17,6 +17,3 @@ while(curr_val != 'd') :
 	curr_val = raw_input()
 
 print "The average of these values is %.2f" % compute_average(values)
-
-
-
