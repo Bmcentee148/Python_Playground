@@ -3,8 +3,9 @@
 
 import random
 from sys import argv
-script_name, num_flips = argv
+script_name, num_flips, num_experiments = argv
 num_flips = int(num_flips)
+num_experiments = int(num_experiments)
 
 # Defined Constants
 HEADS = 0
@@ -26,11 +27,26 @@ def flip_coin(num_flips) :
 
     return face_freq
 
+def print_results(results) :
+    experiment_number = 1
+    for experiment in results :
+        print "\nExperiment #%d:" % experiment_number
+        print "---------------"
+        print "# Heads: %d" % experiment[HEADS]
+        print "# Tails: %d" % experiment[TAILS]
+        experiment_number += 1
+
 
 # Script
-print "Number of flips: %d" % num_flips
-results = flip_coin(num_flips)
-print "Results: ", results
+print "Number of experiments: %d" % num_experiments
+print "Number of flips per experiment: %d" % num_flips
+experiment_results = []
+
+for i in range(num_experiments) :
+    experiment_results.append(flip_coin(num_flips))
+
+print_results(experiment_results)
+
 
 
 
