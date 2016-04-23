@@ -15,7 +15,7 @@ BG_COLOR = WHITE
 pygame.init()
 
 # Set width and height of the screen
-WIDTH = 700
+WIDTH = 500
 HEIGHT = 500
 size = (WIDTH, HEIGHT)
 screen = pygame.display.set_mode(size)
@@ -26,10 +26,10 @@ done = False
 # Used to manage how fast the screen updates
 clock = pygame.time.Clock()
 
-RECT_WIDTH = 25
-RECT_HEIGHT = 50
+RECT_WIDTH = 55
+RECT_HEIGHT = 110
 START_POSITION = [50,50]
-speed = [4, 4] # [x_change, y_change]
+speed = [2, 2] # [x_change, y_change]
 rect_position = START_POSITION
 
 def update_rect_position() :
