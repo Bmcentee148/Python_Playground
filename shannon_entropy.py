@@ -17,6 +17,11 @@ def num_occurences(char , char_seq) :
             count += 1
     return count
 
+def remove_all(item, item_list) :
+    item_list = [i for i in item_list if i != item]
+    #print item_list
+    return item_list
+
 def shannon_entropy(char_seq) :
     """ Calculate the Shannon entropy of a string of characters."""
     n = len(char_seq)
@@ -25,8 +30,7 @@ def shannon_entropy(char_seq) :
     while char_seq :
         curr_char = char_seq[0]
         char_count = num_occurences(curr_char,char_seq)
-        new_seq = [c for c in char_seq if (c != curr_char)]
-        char_seq = new_seq
+        char_seq = remove_all(curr_char, char_seq)
         sum += ( ((float(char_count)) / n) * log((float(char_count) / n), 2) )
     return -sum
 
@@ -44,6 +48,7 @@ def main() :
     dec_formatter = "%.5f"
     for s in inputs :
         print dec_formatter % shannon_entropy(s)
+
     
 
 if __name__ == "__main__" :
