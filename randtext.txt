@@ -1,0 +1,3 @@
+This is some randome text to work with.
+We want to retrieve just the words from it and 
+put them into a list using a list comprehension.
