@@ -7,7 +7,7 @@ except ImportError as e :
     sys.stderr.write('Failure to import setup from setuptools.')
     from distutils.core import setup
 
-config = [
+config = {
     'description' : 'My Project',
     'author' : 'Brian McEntee',
     'url' : 'URL to get it at',
@@ -18,6 +18,6 @@ config = [
     'packages' : ['NAME'],
     'scripts' : [],
     'name' : 'projectname'
-]
+}
 
 setup(**config)
