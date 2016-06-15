@@ -1,1 +1,0 @@
-print "This is the main module of your test skeleton project!"
